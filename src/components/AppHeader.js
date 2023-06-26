@@ -5,7 +5,7 @@ function AppHeader() {
   return (
     <div>
       <h1>Hello from Header Component!</h1>
-      <Button>Click Me</Button>
+      <Button variant="primary">Click Me</Button>
     </div>
   );
 }
