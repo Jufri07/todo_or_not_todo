@@ -5,6 +5,8 @@ const getInitialTodo = () => {
   if (localTodoList) {
     return JSON.parse(localTodoList);
   }
+  window.localStorage.setItem('todolist', JSON.stringify([]));
+  return [];
 };
 
 const initialValue = {
@@ -24,11 +26,6 @@ export const todoSlice = createSlice({
           ...action.payload,
         });
         window.localStorage.setItem('todoList', JSON.stringify(todoListArr));
-      } else {
-        window.localStorage.setItem(
-          'todoList',
-          JSON.stringify([{ ...action.payload }])
-        );
       }
     },
   },
