@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
+
 import { MdOutlineClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
@@ -22,6 +24,7 @@ function TodoModal({ modalOpen, setModalOpen }) {
           time: new Date().toLocaleDateString(),
         })
       );
+      toast.success('Task Added Successfully!');
     }
   };
   return (
